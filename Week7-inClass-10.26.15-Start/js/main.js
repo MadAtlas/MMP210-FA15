@@ -9,9 +9,11 @@ function Bubble(){
     this.r = 20; //r is for radius which is 1/2 the width of the circle
     this.bubbleSize = this.r*2; //width and height are twice the radius
 
-    //draw the bubble
-    fill(67,89,105);
-    ellipse(this.x, this. y, this.bubbleSize, this.bubbleSize);
+    //method: draw the bubble
+    this.drawBubble = function(){
+        fill(67,89,105);
+        ellipse(this.x, this. y, this.bubbleSize, this.bubbleSize);
+    }
 }//end Bubble
 
 
@@ -25,6 +27,7 @@ function setup(){
     for (var i=0; i<1000; i++){
         //add bubbles to the array
         myArray[i] = new Bubble();
+        myArray[i].drawBubble();
     }
 
     //log out the array
