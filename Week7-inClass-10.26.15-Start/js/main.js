@@ -24,7 +24,7 @@ function setup(){
 
     var myArray = []; //create blank array
     //add stuff to the array with a loop
-    for (var i=0; i<1000; i++){
+    for (var i=0; i<2000; i++){
         //add bubbles to the array
         myArray[i] = new Bubble();
         myArray[i].drawBubble();
@@ -41,7 +41,11 @@ function setup(){
 
    console.log(myArray);
 
-
-
 }//end setup
 
+//listen for the mouse presses with the built in p5 mousePressed method
+function mousePressed(){
+    //check that this is working
+    console.log("mouse Pressed");
+
+}
