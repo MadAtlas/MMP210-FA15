@@ -1,5 +1,5 @@
 //global variables
-
+var myArray = []; //create blank array
 
 //Bubble Constructor
 function Bubble(){
@@ -19,28 +19,15 @@ function Bubble(){
 
 function setup(){
     //create the canvas. put into a variable to associate with an element
-    var cnv = createCanvas(800,3000);
+    var cnv = createCanvas(windowWidth,windowHeight);
     cnv.parent("windows");
 
-    var myArray = []; //create blank array
     //add stuff to the array with a loop
-    for (var i=0; i<2000; i++){
+    for (var i=0; i<1500; i++){
         //add bubbles to the array
         myArray[i] = new Bubble();
         myArray[i].drawBubble();
     }
-
-    //log out the array
-    console.log(myArray);
-
-    //loop to go through every item in the array
-    for(var i=0; i < myArray.length; i++) {
-        //myArray[i]+=10;
-        console.log(myArray[i]);
-    }
-
-   console.log(myArray);
-
 }//end setup
 
 //listen for the mouse presses with the built in p5 mousePressed method
@@ -48,4 +35,11 @@ function mousePressed(){
     //check that this is working
     console.log("mouse Pressed");
 
-}
+    //loop through myArray and check if mouse is in each bubble
+    var d;
+    for(var i=0; i < myArray.length; i++){
+        //myArray[i].x myArray[i].r
+        var d = dist(mouseX, mouseY, myArray[i].x, myArray[i].y);
+        console.log("distance",d)
+    }
+}//end mousePressed
