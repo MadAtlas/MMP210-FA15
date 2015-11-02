@@ -26,7 +26,7 @@ function setup(){
     cnv.parent("windows");
 
     //add stuff to the array with a loop
-    for (var i=0; i<50; i++){
+    for (var i=0; i<1500; i++){
         //add bubbles to the array
         myArray[i] = new Bubble();
         myArray[i].drawBubble();
