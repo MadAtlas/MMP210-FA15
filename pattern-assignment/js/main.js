@@ -1,51 +1,35 @@
-//global variables
-var myArray = []; //create blank array
+//golbal vars
+var circleColor;
+var strokeColor;
 
-//Bubble Constructor
-function Bubble(){
-    //create x and y properties (variables)
-    this.x = random(width);
-    this.y = random(height);
-    this.r = 20; //r is for radius which is 1/2 the width of the circle
-    this.bubbleSize = this.r*2; //width and height are twice the radius
+function setup() {
+    createCanvas (windowWidth, windowHeight);
+    circleColor = color(243,156,78);
+    strokeColor = color(45,78,90);
 
-    //method: draw the bubble
-    this.drawBubble = function(){
-        ellipse(this.x, this. y, this.bubbleSize, this.bubbleSize);
-    }
+    drawCircles();
+}
 
-    this.changeColor = function(){
-        fill("orange");
-        this.drawBubble();
-    }
-}//end Bubble
+function drawCircles() {
+    //draws all the circles
+    //for()
+    drawBullseye(random(width),random(height));
+}
 
-function setup(){
-    //create the canvas. put into a variable to associate with an element
-    var cnv = createCanvas(windowWidth,windowHeight);
-    cnv.parent("windows");
+function drawBullseye(startX,startY) {
+    //singles bulleye
+    fill(circleColor);
+    stroke(strokeColor);
+    strokeWeight(3);
+    ellipse(startX,startY,100,100);
+    ellipse(startX,startY,75,75);
+    ellipse(startX,startY,50,50);
 
-    //add stuff to the array with a loop
-    for (var i=0; i<1500; i++){
-        //add bubbles to the array
-        myArray[i] = new Bubble();
-        myArray[i].drawBubble();
-    }
-}//end setup
+    noStroke();
+    fill(strokeColor);
+    ellipse(startX,startY,25,25);
+}
 
-//listen for the mouse presses with the built in p5 mousePressed method
-function mousePressed(){
-    //check that this is working console.log("mouse Pressed");
+function mouseClicked() {
 
-    //loop through myArray and check if mouse is in each bubble
-    var d;
-    for(var i=0; i < myArray.length; i++){
-        //myArray[i].x myArray[i].r
-        d = dist(mouseX, mouseY, myArray[i].x, myArray[i].y);
-        //check to see if the distance is less that the radius
-        //ie is the mouse in the bubble
-        if(d < myArray[i].r){
-            myArray[i].changeColor(); //call the color change function
-        }
-    }
-}//end mousePressed
+}
