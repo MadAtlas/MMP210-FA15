@@ -1,13 +1,22 @@
 //golbal vars
 var circleColor;
 var strokeColor;
+var inoutColor;
+var clickCount;
+
 
 function setup() {
     createCanvas (windowWidth, windowHeight);
 
     circleColor = color(random(120), random(120), random(120));
     strokeColor = color(random(250), random(250), random(250));
+    inoutColor = color(random(250), random(250), random(250));
+    clickCount = 0;
 
+    drawPattern();
+}
+
+function drawPattern() {
     var x = 0;
     var y = 0;
     var gridWidth = width - 110;
@@ -27,9 +36,9 @@ function setup() {
 
 function drawBullseye(startX,startY) {
     //single bulleye
-    fill(circleColor);
-    stroke(strokeColor);
     strokeWeight(3);
+    fill(circleColor);
+    stroke(inoutColor);
     ellipse(startX,startY,100,100);
 
     fill(circleColor);
@@ -40,9 +49,36 @@ function drawBullseye(startX,startY) {
     ellipse(startX,startY,50,50);
 
     noStroke();
-    fill(strokeColor);
+    fill(inoutColor);
     ellipse(startX,startY,25,25);
 }
 
 function mouseClicked() {
+    clickCount++;
+
+    if(clickCount ==  1){
+        circleColor = color(86, 66, 101);
+        strokeColor = color(243, 0, 133);
+        inoutColor = color(157, 255, 6);
+    } else if (clickCount == 2){
+        circleColor = color(88, 17, 123);
+        strokeColor = color(21, 13, 106);
+        inoutColor = color(255, 6, 81);
+    } else if (clickCount == 3){
+        circleColor = color(62, 19, 123);
+        strokeColor = color(90, 249, 0);
+        inoutColor = color(255, 161, 0);
+    } else if (clickCount == 4){
+        circleColor = color(107, 92, 53);
+        strokeColor = color(56, 214, 247);
+        inoutColor = color(255, 6, 174);
+    } else if (clickCount == 5){
+        circleColor = color(random(120), random(120), random(120));
+        strokeColor = color(random(250), random(250), random(250));
+        inoutColor = color(random(120), random(120), random(120));
+
+        clickCount = 0;
+    }
+
+    drawPattern();
 }
