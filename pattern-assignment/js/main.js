@@ -53,26 +53,34 @@ function drawBullseye(startX,startY) {
     ellipse(startX,startY,25,25);
 }
 
-function mouseClicked() {
+function keyPressed() {
     clickCount++;
 
-    if(clickCount ==  1){
-        circleColor = color(86, 66, 101);
-        strokeColor = color(243, 0, 133);
-        inoutColor = color(157, 255, 6);
-    } else if (clickCount == 2){
-        circleColor = color(88, 17, 123);
-        strokeColor = color(21, 13, 106);
-        inoutColor = color(255, 6, 81);
+    if (clickCount == 1){
+        circleColor = color(random(120), random(120), random(120));
+        strokeColor = color(random(250), random(250), random(250));
+        inoutColor = color(random(120), random(120), random(120));
+    } else if(clickCount ==  2){
+        circleColor = color(random(120), random(120), random(120));
+        strokeColor = color(random(250), random(250), random(250));
+        inoutColor = color(random(120), random(120), random(120));
     } else if (clickCount == 3){
         circleColor = color(62, 19, 123);
         strokeColor = color(90, 249, 0);
         inoutColor = color(255, 161, 0);
     } else if (clickCount == 4){
+        circleColor = color(random(120), random(120), random(120));
+        strokeColor = color(random(250), random(250), random(250));
+        inoutColor = color(random(120), random(120), random(120));
+    } else if (clickCount == 5){
         circleColor = color(107, 92, 53);
         strokeColor = color(56, 214, 247);
         inoutColor = color(255, 6, 174);
-    } else if (clickCount == 5){
+    } else if (clickCount == 6){
+        circleColor = color(random(120), random(120), random(120));
+        strokeColor = color(random(250), random(250), random(250));
+        inoutColor = color(random(120), random(120), random(120));
+    } else if (clickCount == 7){
         circleColor = color(random(120), random(120), random(120));
         strokeColor = color(random(250), random(250), random(250));
         inoutColor = color(random(120), random(120), random(120));
