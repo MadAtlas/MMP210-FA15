@@ -14,6 +14,8 @@ function setup() {
     clickCount = 0;
 
     drawPattern();
+
+    alert("Press any key to change the colors within the pattern. Please restrain from holding down keys for too long.")
 }
 
 function drawPattern() {
@@ -89,4 +91,8 @@ function keyPressed() {
     }
 
     drawPattern();
+}
+
+function mousePressed() {
+    alert("Press any key to change the colors within the pattern. Please restrain from holding down keys for too long.")
 }
