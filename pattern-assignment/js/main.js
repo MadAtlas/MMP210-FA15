@@ -1,7 +1,9 @@
 //golbal vars
-var circleColor;
-var strokeColor;
-var inoutColor;
+
+var circleColor;//fill color for all the shapes
+var strokeColor;//stroke color for all the shapes
+var inoutColor;//stroke color for the innermost and outermost circles
+var randomColor;//specifically to randomize colors
 var clickCount;
 
 
@@ -11,6 +13,7 @@ function setup() {
     circleColor = color(random(120), random(120), random(120));
     strokeColor = color(random(250), random(250), random(250));
     inoutColor = color(random(250), random(250), random(250));
+    randomColor = color(random(250), random(250), random(250));
     clickCount = 0;
 
     drawPattern();
@@ -59,33 +62,33 @@ function keyPressed() {
     clickCount++;
 
     if (clickCount == 1){
-        circleColor = color(random(120), random(120), random(120));
-        strokeColor = color(random(250), random(250), random(250));
-        inoutColor = color(random(120), random(120), random(120));
+        circleColor = randomColor;
+        strokeColor = randomColor;
+        inoutColor = randomColor;
     } else if(clickCount ==  2){
-        circleColor = color(random(120), random(120), random(120));
-        strokeColor = color(random(250), random(250), random(250));
-        inoutColor = color(random(120), random(120), random(120));
+        circleColor = randomColor;
+        strokeColor = randomColor;
+        inoutColor = randomColor;
     } else if (clickCount == 3){
         circleColor = color(62, 19, 123);
         strokeColor = color(90, 249, 0);
         inoutColor = color(255, 161, 0);
     } else if (clickCount == 4){
-        circleColor = color(random(120), random(120), random(120));
-        strokeColor = color(random(250), random(250), random(250));
-        inoutColor = color(random(120), random(120), random(120));
+        circleColor = randomColor;
+        strokeColor = randomColor;
+        inoutColor = randomColor;
     } else if (clickCount == 5){
         circleColor = color(107, 92, 53);
         strokeColor = color(56, 214, 247);
         inoutColor = color(255, 6, 174);
     } else if (clickCount == 6){
-        circleColor = color(random(120), random(120), random(120));
-        strokeColor = color(random(250), random(250), random(250));
-        inoutColor = color(random(120), random(120), random(120));
+        circleColor = randomColor;
+        strokeColor = randomColor;
+        inoutColor = randomColor;
     } else if (clickCount == 7){
-        circleColor = color(random(120), random(120), random(120));
-        strokeColor = color(random(250), random(250), random(250));
-        inoutColor = color(random(120), random(120), random(120));
+        circleColor = randomColor;
+        strokeColor = randomColor;
+        inoutColor = randomColor;
 
         clickCount = 0;
     }
