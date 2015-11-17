@@ -6,33 +6,40 @@ function setup() {
     createCanvas (windowWidth, windowHeight);
 
     shadowColor = color('rgba(20,20,20,.45)');
+
+    drawWindows();
 }
 
-function draw() {
+function drawWindows() {
+    var x = 0;
+    var y = 0;
+    var gridWidth = width - 110;
+    for (var i = 0; i < 10; i++) {
+        drawOnewindow(x,y);
+        //increment of x
+        x += 250; //same as x = x + 20;
+        //check if w is past the grid width
+        if(x > gridWidth){
+            //set x back to the begining
+            x = 0;
+            //move y down
+            y += 420;
+        }//end if
+    }//end for loop
+}
+
+function drawOnewindow(startX,startY) {
+    //single window
     //window frame
-    noStroke();
-    fill(46, 38, 57);
-    rect(0,0,275,40);
-    rect(0,477,275,40);
+    rect(startX,startY,200,40);
+    rect(startX,startY+340,200,40);
 
-    //bottom window panel
-    strokeWeight(6);
-    fill(255, 248, 182);
-    stroke(192, 186, 167);
-    rect(35,254,210,220);
-    rect(95,259,1,210);
-    rect(175,259,1,210);
-    rect(40,364,200,1);
+    //bottom part of window
+    rect(startX+20,startY+190,160,150)
+    rect(startX+25,startY+195,150,140)
 
-    //top window panel
-    strokeWeight(6);
-    rect(35,43,210,215);
-    rect(95,49,1,205);
-    rect(175,49,1,205);
-    rect(40,149,200,1);
 
-    //shadow btwn two panels
-    noStroke();
-    fill(shadowColor);
-    rect(32,261,216,4);
+    //top part of window
+    rect(startX+20,startY+40,160,150)
+    rect(startX+25,startY+45,150,140)
 }
