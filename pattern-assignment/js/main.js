@@ -3,22 +3,25 @@
 var circleColor;//fill color for all the shapes
 var strokeColor;//stroke color for all the shapes
 var inoutColor;//stroke color for the innermost and outermost circles
-var randomColor;//specifically to randomize colors
 var clickCount;
 
 
 function setup() {
     createCanvas (windowWidth, windowHeight);
 
-    circleColor = color(random(120), random(120), random(120));
-    strokeColor = color(random(250), random(250), random(250));
-    inoutColor = color(random(250), random(250), random(250));
-    randomColor = color(random(250), random(250), random(250));
     clickCount = 0;
+
+    colorChange();
 
     drawPattern();
 
     alert("Press any key to change the colors within the pattern. Please restrain from holding down keys for too long.")
+}
+
+function colorChange () {
+    circleColor = color(random(120), random(120), random(120));
+    strokeColor = color(random(250), random(250), random(250));
+    inoutColor = color(random(250), random(250), random(250));
 }
 
 function drawPattern() {
@@ -62,33 +65,23 @@ function keyPressed() {
     clickCount++;
 
     if (clickCount == 1){
-        circleColor = randomColor;
-        strokeColor = randomColor;
-        inoutColor = randomColor;
+        colorChange();
     } else if(clickCount ==  2){
-        circleColor = randomColor;
-        strokeColor = randomColor;
-        inoutColor = randomColor;
+        colorChange();
     } else if (clickCount == 3){
         circleColor = color(62, 19, 123);
         strokeColor = color(90, 249, 0);
         inoutColor = color(255, 161, 0);
     } else if (clickCount == 4){
-        circleColor = randomColor;
-        strokeColor = randomColor;
-        inoutColor = randomColor;
+        colorChange();
     } else if (clickCount == 5){
         circleColor = color(107, 92, 53);
         strokeColor = color(56, 214, 247);
         inoutColor = color(255, 6, 174);
     } else if (clickCount == 6){
-        circleColor = randomColor;
-        strokeColor = randomColor;
-        inoutColor = randomColor;
+        colorChange();
     } else if (clickCount == 7){
-        circleColor = randomColor;
-        strokeColor = randomColor;
-        inoutColor = randomColor;
+        colorChange();
 
         clickCount = 0;
     }
